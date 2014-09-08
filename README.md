@@ -8,6 +8,14 @@ Add class depending on the width of the document.
 $(function(){
 	$("html").ClassSizes({
 		classes: {
+			/*
+			type: {
+				classe: "CLASS FOR ITEM",
+				min:	"MIN VALUE WIDTH OF HTML",
+				max:	"MAX VALUE WIDTH OF HTML",
+				
+			}
+			*/
 			xs: { // mobile
 				classe: "screen-xs",
 				min:	"240",
@@ -29,9 +37,9 @@ $(function(){
 				max:	"1199"
 			},
 			lg: {
-				classe: "screen-lg",  // name of class for size
-				min:	"1200",      // minimal value for add class ( min-width: 1200px )
-				max:	"1399",     // max value for add class ( max-width: 1400px )
+				classe: "screen-lg",
+				min:	"1200",
+				max:	"1399",
 			},
 			bg: {
 				classe: "screen-bg",
