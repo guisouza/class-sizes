@@ -40,22 +40,25 @@
 				'bg' : {
 					'classe':	'screen-bg',
 					'min':		'1400',
-					'max':		null, // infinite
+					'max':		'10000', // infinite
 				}
 			}
 		};
 
 		var settings	= $.extend( {}, defaults.classes, options );
-		var windowSize	= $(window).width();
 
 		function GetSetClass( item ) {
+			var windowSize	= $(window).width();
 			for ( var i in settings ) {
 				if( windowSize >= settings[i].min && windowSize <= settings[i].max ) {
 					$( item ).addClass( settings[i].classe );
+				}else{
+					$( item ).removeClass( settings[i].classe );
 				}
 			}
 		}
 		return this.each(function() {
+			$(window).resize(function(){GetSetClass( this );}.bind(this))
 			GetSetClass( this );
 		});
 	}; 
